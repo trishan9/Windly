@@ -1,12 +1,9 @@
 name: Release Extension
 
 on:
+  push:
+    branches: [main, develop]
   workflow_dispatch:
-    inputs:
-      version:
-        description: "Semver bump or explicit version (patch|minor|major|1.2.3)"
-        required: true
-        default: patch
 
 jobs:
   release:
@@ -42,39 +39,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Bump version and tag
-        id: version
-        run: |
-          pnpm version "${{ github.event.inputs.version }}"
-          NEW_VERSION=$(node -p "require('./package.json').version")
-          echo "version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
-          echo "tag=v$NEW_VERSION" >> "$GITHUB_OUTPUT"
-
-      - name: Push commit and tag
+      - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git push origin HEAD
-          git push origin "${{ steps.version.outputs.tag }}"
-
-      - name: Package extension
-        # Skip npm dependency validation; extension has no runtime deps and pnpm layout confuses vsce's npm check.
-        run: pnpm dlx vsce package --no-dependencies -o "windly-${{ steps.version.outputs.version }}.vsix"
-
-      - name: Publish to VS Marketplace
-        env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
-        run: pnpm dlx vsce publish --pat "$VSCE_PAT" --packagePath "windly-${{ steps.version.outputs.version }}.vsix"
-
-      - name: Publish to Open VSX
-        env:
           OVSX_PAT: ${{ secrets.OVSX_PAT }}
-        run: pnpm dlx ovsx publish "windly-${{ steps.version.outputs.version }}.vsix" -p "$OVSX_PAT"
-
-      - name: Create GitHub release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: ${{ steps.version.outputs.tag }}
-          name: ${{ steps.version.outputs.tag }}
-          generate_release_notes: true
-          files: windly-${{ steps.version.outputs.version }}.vsix
+        run: pnpm dlx semantic-release

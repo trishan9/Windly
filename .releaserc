@@ -1,0 +1,43 @@
+{
+  "branches": [
+    "main",
+    {
+      "name": "develop",
+      "prerelease": "beta"
+    }
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "pnpm version ${nextRelease.version} --no-git-tag-version && pnpm dlx vsce package --no-dependencies -o windly-${nextRelease.version}.vsix",
+        "publishCmd": "BRANCH=$(git rev-parse --abbrev-ref HEAD); if [ \"$BRANCH\" = \"main\" ]; then pnpm dlx vsce publish --pat $VSCE_PAT --packagePath windly-${nextRelease.version}.vsix && pnpm dlx ovsx publish windly-${nextRelease.version}.vsix -p $OVSX_PAT; else echo \"Skipping marketplace publish on $BRANCH\"; fi"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["package.json", "pnpm-lock.yaml", "CHANGELOG.md"],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "windly-${nextRelease.version}.vsix"
+          }
+        ]
+      }
+    ]
+  ]
+}
