@@ -3,7 +3,7 @@
   "displayName": "Windly - Tailwind CSS Organizer",
   "description": "Windly - group Tailwind class lists by intent and format them into tidy multiline blocks.",
   "icon": "images/windly.png",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "trishan9",
   "repository": {
     "type": "git",
@@ -14,6 +14,18 @@
   },
   "categories": [
     "Formatters"
+  ],
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "class sorting",
+    "class grouping",
+    "clean code",
+    "pretty",
+    "formatter",
+    "tailwind organizer",
+    "css utilities",
+    "clsx"
   ],
   "main": "./dist/extension.js",
   "activationEvents": [
