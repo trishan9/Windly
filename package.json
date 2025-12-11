@@ -2,6 +2,7 @@
   "name": "windly",
   "displayName": "Windly",
   "description": "Windly - group Tailwind class lists by intent and format them into tidy multiline blocks.",
+  "icon": "images/windly.png",
   "version": "1.0.0",
   "publisher": "trishan9",
   "engines": {
