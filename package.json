@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "publisher": "trishan9",
   "engines": {
-    "vscode": "^1.80.0"
+    "vscode": "^1.107.0"
   },
   "categories": [
     "Formatters"
