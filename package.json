@@ -5,6 +5,10 @@
   "icon": "images/windly.png",
   "version": "1.0.0",
   "publisher": "trishan9",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trishan9/Windly.git"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
