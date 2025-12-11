@@ -18,7 +18,7 @@ importers:
         specifier: ^19.2.7
         version: 19.2.7
       '@types/vscode':
-        specifier: ^1.107.0
+        specifier: ^1.80.0
         version: 1.107.0
       '@vscode/test-cli':
         specifier: ^0.0.12
