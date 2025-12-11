@@ -58,7 +58,8 @@ jobs:
           git push origin "${{ steps.version.outputs.tag }}"
 
       - name: Package extension
-        run: pnpm dlx vsce package -o "windly-${{ steps.version.outputs.version }}.vsix"
+        # Skip npm dependency validation; extension has no runtime deps and pnpm layout confuses vsce's npm check.
+        run: pnpm dlx vsce package --no-dependencies -o "windly-${{ steps.version.outputs.version }}.vsix"
 
       - name: Publish to VS Marketplace
         env:
