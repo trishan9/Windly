@@ -1,3 +1,10 @@
+# [1.1.0-beta.2](https://github.com/trishan9/Windly/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2025-12-12)
+
+
+### Features
+
+* add funding option ([aaf37e3](https://github.com/trishan9/Windly/commit/aaf37e3a6e673c90510c7b4e1db8d7c0d260bda1))
+
 # [1.1.0-beta.1](https://github.com/trishan9/Windly/compare/v1.0.3...v1.1.0-beta.1) (2025-12-11)
 
 

@@ -3,7 +3,7 @@
   "displayName": "Windly - Tailwind CSS Organizer",
   "description": "Windly - group Tailwind class lists by intent and format them into tidy multiline blocks.",
   "icon": "images/windly.png",
-  "version": "1.1.0-beta.1",
+  "version": "1.1.0-beta.2",
   "publisher": "trishan9",
   "repository": {
     "type": "git",
