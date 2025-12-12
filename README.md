@@ -17,7 +17,7 @@ Windly - a modern, minimalistic approach to managing Tailwind classes. It keeps 
 2. Run **Windly: Group Tailwind Classes** from the Command Palette (Ctrl + Shift + P) or bind a shortcut.
 3. Windly rewrites the selection into grouped, multiline output.
 
-<img src="./examples/Windly-Demo.gif"/>
+<img src="https://github.com/trishan9/Github_Assets/raw/main/Windly-Demo.gif"/>
 
 ### Configuration
 
