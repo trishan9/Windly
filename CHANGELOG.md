@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/trishan9/Windly/compare/v1.1.0...v1.2.0) (2025-12-12)
+
+
+### Features
+
+* update demo ([45f7ccb](https://github.com/trishan9/Windly/commit/45f7ccbda7e2bfa15d52c2fd68f3f888ec114c1f))
+
 # [1.1.0](https://github.com/trishan9/Windly/compare/v1.0.3...v1.1.0) (2025-12-12)
 
 
