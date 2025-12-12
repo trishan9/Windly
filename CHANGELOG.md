@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/trishan9/Windly/compare/v1.2.0...v1.2.1) (2025-12-12)
+
+
+### Bug Fixes
+
+* removed unused asset ([e05a364](https://github.com/trishan9/Windly/commit/e05a364741a703a3554dcee8b4869e7ae1ba5780))
+
 # [1.2.0](https://github.com/trishan9/Windly/compare/v1.1.0...v1.2.0) (2025-12-12)
 
 
