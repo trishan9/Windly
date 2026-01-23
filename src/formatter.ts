@@ -75,10 +75,7 @@ function shouldUseClsx(attrName: string | undefined, preferClsxWrapper: boolean)
   if (!attrName) {
     return false;
   }
-  if (attrName === "className") {
-    return true;
-  }
-  return preferClsxWrapper && attrName === "class";
+  return preferClsxWrapper && (attrName === "class" || attrName === "className");
 }
 
 function hasAnyGroups(groups: Map<CategoryId, string[]>): boolean {
